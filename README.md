@@ -6,6 +6,13 @@
 
 ---
 
+## 🌐 Previsualización
+
+La previsualización en vivo del proyecto se encuentra en: **https://--------**
+
+
+---
+
 ## 📋 ¿Qué es este proyecto?
 
 Este es un **portal web estudiantil mejorado** para la Universidad Internacional SEK (UISEK) de Ecuador, diseñado con un enfoque especial en **accesibilidad e inclusión digital**. El objetivo principal es garantizar que **todos los usuarios**, independientemente de sus capacidades físicas, sensoriales o cognitivas, puedan acceder y utilizar el portal de manera efectiva.
