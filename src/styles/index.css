@@ -1,0 +1,213 @@
+/* Importar Bootstrap Icons desde CDN
+   Configurado en: src/config/links.ts -> CDN.bootstrapIcons */
+@import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css');
+
+/* Importar Bootstrap */
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+/* Variables minimalistas - Contraste WCAG AAA */
+:root {
+  --bs-primary: #0066cc;
+  --bs-primary-rgb: 0, 102, 204;
+  --bs-body-color: #212529;
+  --bs-body-bg: #ffffff;
+  --bs-link-color: #0052a3;
+  --bs-link-hover-color: #003d7a;
+}
+
+/* MOBILE FIRST: Estilos base para móvil */
+body {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+p {
+  max-width: 75ch; /* Máximo 75 caracteres por línea para mejor legibilidad */
+}
+
+/* Touch targets mínimo 44x44px (iOS) o 48x48px (Android) */
+button,
+a.btn,
+.nav-link {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Skip link accesibilidad - Visible al enfocar */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  z-index: 9999;
+  padding: 0.5rem 1rem;
+  background-color: var(--bs-primary);
+  color: white;
+  text-decoration: none;
+  border-radius: 0.25rem;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* Logo - Mobile first */
+.logo-img {
+  height: 35px;
+  width: auto;
+}
+
+@media (min-width: 768px) {
+  .logo-img {
+    height: 40px;
+  }
+}
+
+@media (min-width: 992px) {
+  .logo-img {
+    height: 45px;
+  }
+}
+
+/* Navbar minimalista con mejor touch target en mobile */
+.navbar {
+  border-bottom: 1px solid #dee2e6;
+  padding: 0.5rem 0;
+}
+
+.navbar-toggler {
+  padding: 0.25rem 0.5rem;
+}
+
+/* Links móvil: área de toque más grande */
+.nav-link {
+  padding: 0.75rem 1rem !important;
+  font-size: 1.05rem;
+}
+
+/* Links limpios con mejor contraste */
+a {
+  transition: opacity 0.2s, color 0.2s;
+}
+
+a:hover {
+  opacity: 0.85;
+}
+
+a:focus {
+  outline: 2px solid var(--bs-primary);
+  outline-offset: 2px;
+}
+
+/* Mejorar contraste en enlaces de footer */
+footer a.text-white-50:hover,
+footer a.text-white-50:focus {
+  color: #ffffff !important;
+}
+
+/* Cards minimalistas */
+.card-minimal {
+  border: 1px solid #dee2e6;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.card-minimal:hover {
+  border-color: var(--bs-primary);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Carousel - ocultar controles por defecto de Bootstrap */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  display: none;
+}
+
+/* Oferta cards hover effect */
+.card:hover {
+  transform: translateY(-4px);
+  transition: transform 0.3s;
+}
+
+/* Indicadores del carousel activos */
+[data-bs-target="#carouselOfertas"][aria-current="true"] {
+  background-color: #000 !important;
+  width: 32px !important;
+}
+
+/* Accesibilidad - Focus visible mejorado */
+*:focus-visible {
+  outline: 3px solid var(--bs-primary) !important;
+  outline-offset: 2px !important;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--bs-primary) !important;
+  outline-offset: 3px !important;
+}
+
+/* Mejorar contraste de badges */
+.badge.bg-primary {
+  background-color: var(--bs-primary) !important;
+  color: #ffffff;
+}
+
+/* Asegurar que los íconos decorativos no interfieran con lectores de pantalla */
+[aria-hidden="true"] {
+  pointer-events: none;
+}
+
+/* TABLET: >= 768px */
+@media (min-width: 768px) {
+  .logo-img {
+    height: 40px;
+  }
+  
+  body {
+    font-size: 16px;
+  }
+  
+  .nav-link {
+    padding: 0.5rem 0.75rem !important;
+    font-size: 1rem;
+  }
+}
+
+/* DESKTOP: >= 992px */
+@media (min-width: 992px) {
+  .logo-img {
+    height: 45px;
+  }
+  
+  .nav-link {
+    padding: 0.5rem 1rem !important;
+  }
+}
+
+/* Reducir movimiento para usuarios que lo prefieren */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Alto contraste para usuarios que lo necesiten */
+@media (prefers-contrast: high) {
+  :root {
+    --bs-primary: #0052a3;
+  }
+  
+  a {
+    text-decoration: underline;
+  }
+  
+  .btn {
+    border-width: 2px;
+  }
+}
