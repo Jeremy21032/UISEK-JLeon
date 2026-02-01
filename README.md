@@ -1,7 +1,6 @@
 # Portal Estudiantil UISEK Ecuador - Accesible e Inclusivo
 
 ## 👤 Autor
-
 **Jeremy Leon**
 
 ---
@@ -39,13 +38,38 @@ Portal web estudiantil para la Universidad Internacional SEK (UISEK) Ecuador, co
 
 ## 🛠️ Tecnologías
 
-| Icono | Tecnología |
-|:---:|---|
-| ![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB) | React 18 |
-| ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white) | TypeScript |
-| ![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white) | Vite |
-| ![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=flat-square&logo=bootstrap&logoColor=white) | Bootstrap 5 |
-| ![Bootstrap Icons](https://img.shields.io/badge/Bootstrap_Icons-7952B3?style=flat-square&logo=bootstrap&logoColor=white) | Bootstrap Icons |
+<table>
+  <tr>
+    <td align="center" width="33%">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="48" height="48" alt="React"/>
+      <br/><br/>
+      <b>React 18</b>
+    </td>
+    <td align="center" width="33%">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" width="48" height="48" alt="TypeScript"/>
+      <br/><br/>
+      <b>TypeScript</b>
+    </td>
+    <td align="center" width="33%">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg" width="48" height="48" alt="Vite"/>
+      <br/><br/>
+      <b>Vite</b>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="33%">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" width="48" height="48" alt="Bootstrap"/>
+      <br/><br/>
+      <b>Bootstrap 5</b>
+    </td>
+    <td align="center" width="33%">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" width="48" height="48" alt="Bootstrap Icons"/>
+      <br/><br/>
+      <b>Bootstrap Icons</b>
+    </td>
+    <td align="center" width="33%"></td>
+  </tr>
+</table>
 
 Enlaces centralizados en `src/config/links.ts`.
 
