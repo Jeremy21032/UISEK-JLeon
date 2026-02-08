@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import { IMAGES } from '@/config/links';
 
-export function Navigation() {
+interface NavigationProps {
+  onOpenEyeTracking?: () => void;
+}
+
+export function Navigation({ onOpenEyeTracking }: NavigationProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -46,8 +50,24 @@ export function Navigation() {
                 <a className="nav-link py-2 py-lg-0" href="#home" style={{ minHeight: '44px', display: 'flex', alignItems: 'center' }}>Estudiantes</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link py-2 py-lg-0" href="#home" style={{ minHeight: '44px', display: 'flex', alignItems: 'center' }}>Contacto</a>
+                <a className="nav-link py-2 py-lg-0" href="#contacto-footer" style={{ minHeight: '44px', display: 'flex', alignItems: 'center' }}>Contacto</a>
               </li>
+              {onOpenEyeTracking && (
+                <li className="nav-item">
+                  <button
+                    type="button"
+                    className="btn btn-primary nav-link py-2 py-lg-0 d-flex align-items-center"
+                    style={{ minHeight: '44px', fontWeight: '600' }}
+                    onClick={() => {
+                      setIsOpen(false);
+                      onOpenEyeTracking();
+                    }}
+                    aria-label="Participar en el experimento de eye-tracking"
+                  >
+                    Participar en experimento
+                  </button>
+                </li>
+              )}
             </ul>
           </div>
         </div>

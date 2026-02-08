@@ -3,7 +3,12 @@ import { Navigation } from '@/app/components/Navigation';
 import { Footer } from '@/app/components/Footer';
 import { IMAGES } from '@/config/links';
 
-export function OfertaAcademicaPage() {
+interface OfertaAcademicaPageProps {
+  /** Si es true, no se muestra Navigation ni skip link (cuando la página se incrusta en el layout de App). */
+  embedded?: boolean;
+}
+
+export function OfertaAcademicaPage({ embedded = false }: OfertaAcademicaPageProps) {
   const [activeCategory, setActiveCategory] = useState<string>('pregrado');
 
   const categorias = [
@@ -220,28 +225,8 @@ export function OfertaAcademicaPage() {
 
   const contenido = getContenidoPorCategoria();
 
-  return (
-    <div className="d-flex flex-column min-vh-100">
-      {/* Mejora de accesibilidad 2: Skip Links para navegación rápida */}
-      <a 
-        href="#main-content" 
-        className="skip-link position-absolute bg-primary text-white px-4 py-2 text-decoration-none"
-        style={{ 
-          top: '-100px', 
-          left: '50%', 
-          transform: 'translateX(-50%)',
-          zIndex: 9999,
-          transition: 'top 0.3s'
-        }}
-        onFocus={(e) => e.currentTarget.style.top = '10px'}
-        onBlur={(e) => e.currentTarget.style.top = '-100px'}
-      >
-        Saltar al contenido principal
-      </a>
-      
-      <Navigation />
-      
-      <main id="main-content">
+  const mainContent = (
+    <main id="main-content">
         {/* Hero Section - Negro */}
         <section 
           className="bg-dark text-white"
@@ -455,7 +440,29 @@ export function OfertaAcademicaPage() {
           </div>
         </section>
       </main>
+  );
 
+  if (embedded) return mainContent;
+
+  return (
+    <div className="d-flex flex-column min-vh-100">
+      <a
+        href="#main-content"
+        className="skip-link position-absolute bg-primary text-white px-4 py-2 text-decoration-none"
+        style={{
+          top: '-100px',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          zIndex: 9999,
+          transition: 'top 0.3s'
+        }}
+        onFocus={(e) => { e.currentTarget.style.top = '10px'; }}
+        onBlur={(e) => { e.currentTarget.style.top = '-100px'; }}
+      >
+        Saltar al contenido principal
+      </a>
+      <Navigation />
+      {mainContent}
       <Footer />
 
       {/* Mejora de accesibilidad 3: Estilos para foco visible mejorado */}

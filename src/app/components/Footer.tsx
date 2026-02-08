@@ -71,7 +71,7 @@ export function Footer() {
           </div>
 
           {/* Contacto */}
-          <div className="col-lg-4 offset-lg-1">
+          <div className="col-lg-4 offset-lg-1" id="contacto-footer">
             <h5 className="fw-bold mb-4" style={{ fontSize: '1.25rem' }}>Contacto y atención</h5>
             
             <address className="small" style={{ fontStyle: 'normal' }}>
