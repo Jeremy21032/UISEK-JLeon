@@ -1,153 +1,99 @@
-# Portal Estudiantil UISEK Ecuador - Accesible e Inclusivo
+# Portal Estudiantil UISEK – Eye-Tracking
 
-## 👤 Autor
-**Jeremy Leon**
+**Autor:** Jeremy León  
+**Proyecto académico – 2026**
 
----
-
-## 🌐 Previsualización
-
-**[https://uisek-j-leon.vercel.app/](https://uisek-j-leon.vercel.app/)**
+🔗 **Previsualización:** https://uisek-j-leon.vercel.app/
 
 ---
 
-## 📋 Descripción
+## 🎯 Objetivo del ejercicio
 
-Portal web estudiantil para la Universidad Internacional SEK (UISEK) Ecuador, con enfoque en **accesibilidad e inclusión digital** (WCAG 2.1 nivel AA). Incluye:
-
-- **Página de inicio** con hero, servicios estudiantiles, oferta académica, portales, noticias y contacto.
-- **Oferta académica** (`#oferta-academica`): programas por categoría (pregrado, posgrado, online, educación continua, idiomas, webinars).
-- **Admisiones** (`#admisiones`).
-- **Formulario de postulación** (modal «Postular ahora») y **panel de accesibilidad** (tamaño de texto, alto contraste, reducir animaciones).
-- **Experimento de eye-tracking** integrado: 3 tareas aleatorias, 90 segundos de captura, descarga del mapa de calor en PNG.
-
-**Principios:** diseño minimalista (3 colores), mobile first, Bootstrap 5, HTML5 semántico. El enlace «Contacto» del header lleva a la sección de contacto del footer (`#contacto-footer`).
+Analizar el **comportamiento visual de los usuarios** al interactuar con el Portal Estudiantil UISEK, utilizando técnicas de **eye-tracking con webcam** y **mapas de calor**, con el fin de evaluar la **usabilidad**, la **jerarquía visual** y la **accesibilidad** de la interfaz web.
 
 ---
 
-## ✅ Accesibilidad implementada
+## 🧪 ¿Qué se hizo?
 
-| Criterio | Implementación |
-|----------|----------------|
-| Etiquetas semánticas | `<header>`, `<nav>`, `<main>`, `<footer>`, `<section>`, `<article>` |
-| Contraste | Paleta cumple WCAG AA/AAA (ej. texto/fondo 18.6:1) |
-| Imágenes | Todas con `alt` descriptivo; decorativas con `aria-hidden` |
-| Formularios | Labels asociados, `aria-required`, validación en tiempo real |
-| Teclado | Tab ordenado, skip links, foco visible 3px, Escape cierra modales |
-| Títulos | Jerarquía h1–h6 correcta |
-| Enlaces/botones | Textos descriptivos; sin “clic aquí” |
-| Legibilidad | Fuente mínima 16px, line-height 1.6, ancho de línea ≤75ch |
+- Se utilizó una **interfaz web real** del Portal Estudiantil UISEK.
+- Se integró **WebGazer.js** para capturar la mirada del usuario mediante la webcam.
+- Se implementó **Heatmap.js** para generar un **mapa de calor** a partir de los puntos de fijación visual.
+- Se definió una **tarea concreta** para el usuario.
+- La captura de la mirada tuvo una duración de **90 segundos**.
+- Al finalizar el experimento, el sistema genera y permite descargar el **mapa de calor** como imagen (PNG).
 
-**Panel de accesibilidad** (esquina inferior derecha): tamaño de fuente (3 niveles), alto contraste, reducir animaciones. Preferencias guardadas en el navegador.
+El proyecto está desarrollado en **React**, el cual genera **HTML, CSS y JavaScript estándar**, cumpliendo con los requisitos técnicos del ejercicio.
 
 ---
 
-## 🛠️ Tecnologías
+## 🧠 Tarea asignada al usuario
 
-<table>
-  <tr>
-    <td align="center" width="33%">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="48" height="48" alt="React"/>
-      <br/><br/>
-      <b>React 18</b>
-    </td>
-    <td align="center" width="33%">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" width="48" height="48" alt="TypeScript"/>
-      <br/><br/>
-      <b>TypeScript</b>
-    </td>
-    <td align="center" width="33%">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg" width="48" height="48" alt="Vite"/>
-      <br/><br/>
-      <b>Vite</b>
-    </td>
-  </tr>
-  <tr>
-    <td align="center" width="33%">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" width="48" height="48" alt="Bootstrap"/>
-      <br/><br/>
-      <b>Bootstrap 5</b>
-    </td>
-    <td align="center" width="33%">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" width="48" height="48" alt="Bootstrap Icons"/>
-      <br/><br/>
-      <b>Bootstrap Icons</b>
-    </td>
-    <td align="center" width="33%"></td>
-  </tr>
-</table>
+Durante el experimento, el usuario debía realizar una de las siguientes tareas (asignada automáticamente):
 
-Enlaces centralizados en `src/config/links.ts`. Para el experimento de eye-tracking se usan **WebGazer** (seguimiento de mirada por webcam) y **Heatmap.js** (visualización); la exportación del mapa de calor a PNG se hace con un canvas propio en la app.
+- Encontrar el formulario de inscripción.
+- Localizar una carrera dentro de la oferta académica.
+- Identificar la información de contacto institucional.
 
 ---
 
-## 👁️ Experimento de Eye-Tracking
+## 👥 Prueba con usuarias
 
-### Objetivo
+El experimento se realizó con **dos usuarias que nunca habían utilizado previamente la plataforma**.
 
-Evaluar **dónde miran los usuarios** mientras realizan tareas concretas en el portal (formulario de inscripción, búsqueda de una carrera en la oferta académica, datos de contacto). Los datos de mirada permiten contrastar la intención del diseño con el comportamiento visual real y proponer mejoras de usabilidad basadas en evidencia.
+- **Usuaria 1:** no presentó problemas de accesibilidad ni de interacción. Navegó de forma fluida utilizando mouse y teclado, completando la tarea asignada sin dificultades.
 
-### Cómo funciona
+- **Usuaria 2:** presentó dificultades de accesibilidad debido a que no comprendía completamente el funcionamiento del equipo y **no podía utilizar el mouse pad**. Interactuó con la plataforma utilizando únicamente el **teclado** (Tab y Enter).
 
-1. El usuario hace clic en **«Participar en experimento»** (header) o en **«Iniciar experimento»** en la sección del experimento (home).
-2. Se asigna **una tarea al azar** entre tres:
-   - **Formulario de inscripción:** buscar el formulario en la página, completarlo y hacer clic en «Enviar solicitud».
-   - **Oferta académica:** ir a la página de oferta académica y buscar **una carrera concreta** (elegida al azar de la lista de programas, p. ej. «Derecho», «Ingeniería de Software»). La lista está en `src/config/carrerasOferta.ts`.
-   - **Datos de contacto:** encontrar la sección de contacto (el enlace «Contacto» del header lleva al footer).
-3. Se solicita **permiso de cámara**; al aceptar, WebGazer empieza a registrar la mirada.
-4. El usuario dispone de **90 segundos** para realizar la tarea. Puede navegar por el portal (p. ej. a `#oferta-academica`); WebGazer sigue activo y el header no se duplica gracias al modo incrustado de la página de oferta.
-5. Al terminar los 90 s aparece un **modal «Experimento finalizado»**: el mapa de calor no se muestra en pantalla; el usuario puede **generar y descargar** el PNG del mapa de calor y ver una **vista previa** en el mismo modal.
-
-### Tecnología: WebGazer y mapa de calor
-
-- **WebGazer** (`src/eye-tracking/useWebGazer.js`): estima la posición de la mirada (x, y) con la webcam en el navegador. El hook **`useWebGazer`** guarda cada predicción en **`gazeData`** (array de `{ x, y }`) y expone **`start()`**, **`stop()`**, **`end()`** y **`clearGazeData()`**. La captura dura **90 segundos** por sesión.
-
-- **Mapa de calor:**  
-  - En pantalla no se dibuja el heatmap durante la navegación.  
-  - Al finalizar, el PNG se genera con un **canvas propio** en `App.tsx` (función **`exportHeatmapToPNG`**): se normalizan las coordenadas al viewport, se dibuja un mapa de calor (gradiente azul → verde → amarillo → rojo) y se devuelve un data URL para descarga.  
-  - El hook **`useHeatmap`** (`src/eye-tracking/useHeatmap.js`) usa Heatmap.js para el contenedor oculto del experimento; la exportación a PNG evita dependencias problemáticas (p. ej. `ImageData.data` de solo lectura en algunos navegadores).
-
-- **Componente** **`EyeTrackingExperiment`** (`src/eye-tracking/EyeTrackingExperiment.jsx`): orquesta WebGazer y la tarea; al iniciar asigna la tarea aleatoria (y, si es «Oferta académica», una carrera al azar con **`getCarreraAlAzar()`** desde `src/config/carrerasOferta.ts`).
-
-### Navegación durante el experimento
-
-Si la tarea es «Oferta académica», el usuario puede ir a `#oferta-academica`. La app mantiene un **único layout** (header de App + bloque del experimento + contenido de la página): la página de oferta se renderiza con la prop **`embedded`** para no mostrar su propia barra de navegación y evitar headers duplicados. WebGazer sigue registrando la mirada en esa página.
-
-### Interpretación del heatmap
-
-- **Zonas calientes (rojo/naranja):** más fijaciones / mayor atención.
-- **Zonas frías (azul):** menos atención.
-- Sirve para comprobar si los elementos clave de cada tarea (formulario, carrera en oferta, contacto) reciben la atención esperada y para proponer mejoras de jerarquía visual y ubicación.
+Este escenario evidenció la importancia de contar con una **navegación accesible por teclado**, un **orden lógico del foco** y elementos interactivos claramente identificables.
 
 ---
 
-## 🚀 Uso del proyecto
+## 🔥 Análisis de las zonas de atención visual
+
+A partir de los mapas de calor obtenidos se observaron los siguientes patrones:
+
+- Las **zonas centrales de la pantalla** concentran la mayor atención visual.
+- Los elementos relacionados directamente con la tarea reciben más fijaciones.
+- Las áreas secundarias o periféricas presentan menor atención.
+
+Los resultados indican que la jerarquía visual del portal guía adecuadamente la mirada del usuario, aunque algunos elementos clave pueden reforzarse visualmente.
+
+---
+
+## 📐 Relación con principios de usabilidad
+
+Los resultados del eye-tracking se relacionan con las siguientes heurísticas de usabilidad:
+
+- **Visibilidad del estado del sistema:** mensajes claros durante el inicio, la captura y la finalización del experimento.
+- **Reconocimiento antes que recuerdo:** los elementos importantes son visibles y fáciles de identificar.
+- **Diseño minimalista:** la atención se concentra en las zonas esperadas.
+- **Accesibilidad y flexibilidad de uso:** se evidencia la necesidad de soporte completo por teclado.
+
+---
+
+## 🛠️ Propuestas de mejora
+
+1. **Reforzar visualmente los llamados a la acción (CTA)**  
+   Mejorar contraste, tamaño o ubicación para captar atención más rápidamente.
+
+2. **Mejorar la accesibilidad por teclado**  
+   Optimizar el orden de tabulación, foco visible y navegación sin mouse.
+
+---
+
+## ▶️ Evidencia de ejecución (video)
+
+El siguiente video muestra **todo el flujo del experimento**:  
+calibración de WebGazer, captura de la mirada y generación del mapa de calor.
+
+<video src="./public/eye-tracking-evidencia.mp4" controls width="100%"></video>
+
+> 📁 El archivo se encuentra en la carpeta `public/` del repositorio.
+
+---
+
+## 🚀 Ejecución local
 
 ```bash
 npm install
-npm run dev      # http://localhost:5173
-npm run build
-npm run preview
-```
-
----
-
-## 🌐 Despliegue (Vercel)
-
-- **Con repositorio:** [vercel.com](https://vercel.com) → Add New → Project → importar repo. Build y output se detectan (Vite).
-- **CLI:** `npm i -g vercel` → `vercel` → `vercel --prod` para producción.
-
-El proyecto incluye `vercel.json` con la configuración necesaria.
-
----
-
-## 📚 Referencias
-
-- [WCAG 2.1](https://www.w3.org/WAI/WCAG21/quickref/)
-- [UISEK Ecuador](https://uisek.edu.ec/)
-
----
-
-## 📄 Licencia
-
-Proyecto educativo - 2026
+npm run dev
